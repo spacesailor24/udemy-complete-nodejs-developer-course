@@ -6,17 +6,14 @@
 
 [**Webstorm IDE**](https://www.jetbrains.com/webstorm/?fromMenu) - https://www.jetbrains.com/webstorm/?fromMenu
 
-[**nodemon**](https://www.npmjs.com/package/nodemon) - https://www.npmjs.com/package/nodemon - nodemon will watch the files in the directory in which nodemon was started, and if any files change, nodemon will automatically restart your node application.
-
-[**yargs**](https://www.npmjs.com/package/yargs) - https://www.npmjs.com/package/yargs - Yargs helps you build interactive command line tools, by parsing arguments and generating an elegant user interface.
-
 ## Table of Contents
 
 Lecture Topic | Link
 --- | ---
 General Commands | [General Commands](#general-commands)
 General Notes | [General Notes](#general-notes)
-**Useful Codes** | [Useful Codes](#userful-codes)
+General Packages | [General Packages](#general-packages)
+**Useful Codes** | [Useful Codes](#useful-codes)
 Writing to a file | [Writing to a file](#writing-to-a-file)
 **SECTION 2** | [**Section 2**](#section-2)
 What is Node? | [Lecture 4](#section-2-lecture-4)
@@ -40,6 +37,12 @@ Getting Input From User | [Lecture 13](#section-3-lecture-13)
 
 - **I/O** stands for Input/Output: computers are based on the fundamental idea that every input results in an output
 - [**Pre-packaged Node packages**](https://nodejs.org/api) - https://nodejs.org/api/
+
+## General Packages
+
+- [**nodemon**](https://www.npmjs.com/package/nodemon) - https://www.npmjs.com/package/nodemon - nodemon will watch the files in the directory in which nodemon was started, and if any files change, nodemon will automatically restart your node application.
+
+- [**yargs**](https://www.npmjs.com/package/yargs) - https://www.npmjs.com/package/yargs - Yargs helps you build interactive command line tools, by parsing arguments and generating an elegant user interface.
 
 ## Useful Codes
 
