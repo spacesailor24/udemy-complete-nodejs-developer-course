@@ -6,7 +6,8 @@ const yargs = require('yargs');
 
 const notes = require('./notes.js');
 
-let userArgumentOne = userArgumentValidation(process.argv[2]);
+let argv = yargs.argv;
+let userArgumentOne = userArgumentValidation(argv._[0]);
 
 function userArgumentValidation (argument) {
     try {
@@ -21,20 +22,16 @@ function userArgumentValidation (argument) {
 function handleUserArgument(argument) {
     switch (argument) {
         case 'add':
-            console.log('Adding Note...');
-            // add a note
+            notes.add(argv.title, argv.body);
             break;
         case 'remove':
-            console.log('Removing Note...');
-            // remove a note
+            notes.remove(argv.title);
             break;
         case 'list':
-            console.log('Listing Notes...');
-            // list all notes
+            notes.list();
             break;
         case 'read':
-            console.log('Reading Note...');
-            // read a note
+            notes.getNote(argv.title);
             break;
         default:
             console.log('Command Not Found.');
