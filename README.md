@@ -16,6 +16,8 @@ General Notes | [General Notes](#general-notes)
 What is Node? | [Lecture 4](#section-2-lecture-4)
 Why Should I Use Node? | [Lecture 5](#section-2-lecture-5)
 Hello World | [Lecture 7](#section-2-lecture-7)
+**SECTION 3** | [**Section 3**](#section-3)
+Using Require | [Lecture 9](#section-3-lecture-9)
 
 ## General Commands
 
@@ -26,6 +28,7 @@ Hello World | [Lecture 7](#section-2-lecture-7)
 ## General Notes
 
 - **I/O** stands for Input/Output: computers are based on the fundamental idea that every input results in an output
+- [**Pre-packaged Node packages**](https://nodejs.org/api) - https://nodejs.org/api/
 
 <!-- ################################################################################################################ -->
 <!--                                                     SECTION 2                                                    -->
@@ -70,3 +73,30 @@ console.log('Hello World'!);
 ```
 
 - To run `app.js` type into the terminal: `node hello_world/app.js`
+
+<!-- ################################################################################################################ -->
+<!--                                                     SECTION 3                                                    -->
+<!-- ################################################################################################################ -->
+
+## SECTION 3
+
+### Section 3 Lecture 9
+
+#### Using Require
+
+- Use the `require()` method to utilize **Node Modules** within a file:
+
+```javascript
+console.log('Starting app...');
+
+const fs = require('fs'); // pulls in the File System Node module
+const os = require('os'); // pulls in the OS Node module
+
+var filename = 'greetings.txt';
+var user = os.userInfo();
+var greeting = `Hello World! Welcome to ${user.username}\'s terminal!\n`;
+
+fs.appendFile(filename, greeting, function (err) {
+    if (err) throw err;
+});
+```
