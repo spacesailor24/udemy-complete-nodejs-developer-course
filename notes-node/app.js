@@ -1,12 +1,6 @@
-console.log('Starting app...');
+console.log('Starting app.js...');
 
 const fs = require('fs'); // pulls in the File System Node module
-const os = require('os'); // pulls in the OS Node module
+const _ = require('lodash'); // pulls in the lodash Node package
 
-var filename = 'greetings.txt';
-var user = os.userInfo();
-var greeting = `Hello World! Welcome to ${user.username}\'s terminal!\n`;
-
-fs.appendFile(filename, greeting, function (err) {
-    if (err) throw err;
-});
+const notes = require('./notes.js');
