@@ -8,7 +8,7 @@
 
 Lecture Topic | Link
 --- | ---
-General Notes | [General Notes](#general-notes)
+General Commands | [General Commands](#general-commands)
 **SECTION 2** | [**Section 2**](#section-2)
 What is Node? | [Lecture 4](#section-2-lecture-4)
 
