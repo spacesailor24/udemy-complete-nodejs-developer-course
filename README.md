@@ -14,7 +14,10 @@ General Commands | [General Commands](#general-commands)
 General Notes | [General Notes](#general-notes)
 General Packages | [General Packages](#general-packages)
 **Useful Codes** | [Useful Codes](#useful-codes)
+Exporting methods from Node module | [Exporting methods from Node module](#exporting-methods-from-node-module)
 Writing to a file | [Writing to a file](#writing-to-a-file)
+JSON Stringify | [JSON Stringfy](#json-stringify)
+JSON Parse | [JSON Parse](#json-parse)
 **SECTION 2** | [**Section 2**](#section-2)
 What is Node? | [Lecture 4](#section-2-lecture-4)
 Why Should I Use Node? | [Lecture 5](#section-2-lecture-5)
@@ -22,6 +25,8 @@ Hello World | [Lecture 7](#section-2-lecture-7)
 **SECTION 3** | [**Section 3**](#section-3)
 Using Require | [Lecture 9](#section-3-lecture-9)
 Getting Input From User | [Lecture 13](#section-3-lecture-13)
+Simplified Input With Yargs | [Lecture 14](#section-3-lecture-14)
+Working With JSON | [Lecture 15](#section-3-lecture-15)
 
 ## General Commands
 
@@ -37,6 +42,7 @@ Getting Input From User | [Lecture 13](#section-3-lecture-13)
 
 - **I/O** stands for Input/Output: computers are based on the fundamental idea that every input results in an output
 - [**Pre-packaged Node packages**](https://nodejs.org/api) - https://nodejs.org/api/
+- **JSON** stands for JavaScript Object Notation: **JSON** is a string representation of JavaScript **arrays** and **objects**
 
 ## General Packages
 
@@ -71,6 +77,28 @@ var text = `Hello World!`;
 fs.appendFile(filename, text, function (err) {
     if (err) throw err;
 });
+```
+
+### JSON Stringify
+
+Takes a JavaScript **object** and turns it into a **string** representation
+
+```javascript
+var obj = {
+    someKey: 'Some Property'
+};
+
+var stringObj = JSON.stringify(obj); // result: var stringObj = '{"someKey: "Some Property"}'
+```
+
+### JSON Parse
+
+Takes a **string** and turns it into a JavaScript **object**
+
+```javascript
+var string = '{"someKey": "Some Value"}';
+
+var obj = JSON.parse(string); // result: {someKey: "Some Value"}
 ```
 
 <!-- ################################################################################################################ -->
@@ -184,4 +212,26 @@ const yargs = require('yargs');
 const argv = yargs.argv;
 
 console.log(argv.myArgumentKey);
+```
+
+### Section 3 Lecture 15
+
+#### Working With JSON
+
+In the following example, the code is taking a JavaScript **object** and **stringifying** it, then write the **strinified** version a to file, reading the **string** from the file, then **parsing** the **string** back into a JavaScript **object**:
+
+```javascript
+const fs = require('fs'); // Requireing fs package
+
+var myObj = { // Creating object
+    myKey: "My Value"
+};
+
+var myStringObj = JSON.stringify(myObj); // Turing myObj into a JSON string representation
+
+fs.writeFileSync('myTextFile.json', myStringObj); // Writting the myStringObj to a myTextFile.json
+
+var fileString = fs.readFileSync('myTextFile.json'); // Reading myTextFile.json
+
+var myFileObj = JSON.parse(fileString); // Parsing JSON string representation into a JavaScript object
 ```
