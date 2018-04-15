@@ -1,7 +1,5 @@
-console.log('Starting app.js...');
-
-const fs = require('fs'); // pulls in the File System Node module
-const _ = require('lodash'); // pulls in the lodash Node package
+const fs = require('fs');
+const _ = require('lodash');
 const yargs = require('yargs');
 
 const notes = require('./notes.js');
@@ -31,7 +29,7 @@ function handleUserArgument(argument) {
             notes.list();
             break;
         case 'read':
-            notes.getNote(argv.title);
+            notes.read(argv.title);
             break;
         default:
             console.log('Command Not Found.');
