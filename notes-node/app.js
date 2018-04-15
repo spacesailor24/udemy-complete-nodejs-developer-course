@@ -20,7 +20,16 @@ function userArgumentValidation (argument) {
 function handleUserArgument(argument) {
     switch (argument) {
         case 'add':
-            notes.add(argv.title, argv.body);
+            console.log('Adding note...');
+
+            const result = notes.add(argv.title, argv.body);
+
+            if (result !== null && _.has(result, 'title')) {
+                console.log('Note addition was successful!\n' +
+                    'Here is your new note...');
+
+                console.log(notes.read(result.title));
+            }
             break;
         case 'remove':
             notes.remove(argv.title);

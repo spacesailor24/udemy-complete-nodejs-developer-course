@@ -43,12 +43,23 @@ Working With JSON | [Lecture 15](#section-3-lecture-15)
 - **I/O** stands for Input/Output: computers are based on the fundamental idea that every input results in an output
 - [**Pre-packaged Node packages**](https://nodejs.org/api) - https://nodejs.org/api/
 - **JSON** stands for JavaScript Object Notation: **JSON** is a string representation of JavaScript **arrays** and **objects**
+- **Function Hoisting** Hoisting is JavaScript's default behavior of moving declarations to the top of the current scope. Hoisting applies to variable declarations and to function declarations. Because of this, JavaScript functions can be called before they are declared:
+
+```javascript
+myFunction(5);
+
+function myFunction(y) {
+    return y * y;
+}
+```
 
 ## General Packages
 
 - [**nodemon**](https://www.npmjs.com/package/nodemon) - https://www.npmjs.com/package/nodemon - nodemon will watch the files in the directory in which nodemon was started, and if any files change, nodemon will automatically restart your node application.
 
 - [**yargs**](https://www.npmjs.com/package/yargs) - https://www.npmjs.com/package/yargs - Yargs helps you build interactive command line tools, by parsing arguments and generating an elegant user interface.
+
+- [**lodash**](https://www.npmjs.com/package/lodash) - https://www.npmjs.com/package/lodash - A modern JavaScript utility library delivering modularity, performance & extras. [**DOCS**](https://lodash.com/docs) - https://lodash.com/docs
 
 ## Useful Codes
 
